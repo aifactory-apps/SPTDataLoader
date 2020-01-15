@@ -90,6 +90,16 @@ didReceiveDataChunk:(NSData *)data
 needsNewBodyStream:(void (^)(NSInputStream *))completionHandler
         forRequest:(SPTDataLoaderRequest *)request;
 
+- (void)dataLoader:(SPTDataLoader *)dataLoader
+updatedCountOfBytesReceived:(int64_t)countOfBytesReceived
+countOfBytesExpectedToReceive:(int64_t)countOfBytesExpectedToReceive
+        forRequest:(SPTDataLoaderRequest *)request;
+
+- (void)dataLoader:(SPTDataLoader *)dataLoader
+updatedCountOfBytesSent:(int64_t)countOfBytesSent
+countOfBytesExpectedToSend:(int64_t)countOfBytesExpectedToSend
+        forRequest:(SPTDataLoaderRequest *)request;
+
 @end
 
 NS_ASSUME_NONNULL_END
